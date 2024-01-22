@@ -4,7 +4,7 @@ import GasPrice from './GasPrice';
 
 export const scraperGasPrice = async () => {
     try {
-        const response = await axios.get('https://snowtrace.io/');
+        const response = await axios.get('https://api.avax.network/ext/bc/C/rp');
         console.log('HTML Content:', response.data);
 
 

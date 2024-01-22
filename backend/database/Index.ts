@@ -11,9 +11,9 @@ app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 
-app.use(express.json()); // Add this line if you are using JSON in your requests
+app.use(express.json());
 
-// Set up your database connection
+//  database connection
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@atlascluster.bsihbru.mongodb.net/?retryWrites=true&w=majority`, {})
     .then(() => {
         console.log('Database connected successfully');
@@ -21,13 +21,13 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@at
     })
     .catch(err => console.error('Database connection error:', err));
 
-// Define your Express routes here
+// Express routes here
 app.get('/', (req, res) => {
     // Handle gas prices endpoint
     res.send('Gas prices endpoint');
 });
 
-// Set up periodic scraping
+// periodic scraping
 setInterval(scraperGasPrice, 30 * 60 * 1000);
 
 app.listen(PORT, () => {

@@ -20,7 +20,7 @@ function App() {
 
         console.log('Response from API:', response.data);
         setGasPrices(response.data);
-      } catch (error) { // explicitly type 'error' as 'any'
+      } catch (error) {
         console.error('Error fetching gas prices:', error);
       }
     };
@@ -32,7 +32,7 @@ function App() {
   }, []);
 
   return (
-    <div className="app-container"> {/* Apply a class for styling */}
+    <div className="app-container">
       <h1>Gas Price Tracker</h1>
       {gasPrices.length > 0 ? (
         <table>
