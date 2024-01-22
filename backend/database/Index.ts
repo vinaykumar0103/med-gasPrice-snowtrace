@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 //  database connection
-mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@atlascluster.bsihbru.mongodb.net/?retryWrites=true&w=majority`, {})
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@atlascluster.bsihbru.mongodb.net/?retryWrites=true&w=majority`)
     .then(() => {
         console.log('Database connected successfully');
         console.log('Is Mongoose connection open:', mongoose.connection.readyState === 1);
